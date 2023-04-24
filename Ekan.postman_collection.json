@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "5cd320b5-bf39-4893-bc86-2dc50cc62798",
+		"name": "Ekan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar um beneficiário junto com seus documentos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bGFuam9zIiwiaXNzIjoiQmVuZWZpY2lhcmlvIiwiaWQiOjMsImV4cCI6MTY4MjMwMDMxNX0.g74H2aeR-JZXs_Jwbxaicj3Uk-INOWL_JVhqEU08hf4f_kIsNsXEx_nwZdg_I8ROC5f0J-W6RYVb4upSOaq4KA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nome\":\"TOM\",\r\n   \"telefone\":11987638089,\r\n   \"dtNascimento\":\"1991-02-22\",\r\n   \"documentos\":[\r\n      {\r\n         \"tipoDocumento\":\"cpf\",\r\n         \"descricao\":\"37844260858\"\r\n      }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/beneficiario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficiario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os beneficiários cadastrados",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bGFuam9zIiwiaXNzIjoiQmVuZWZpY2lhcmlvIiwiaWQiOjEsImV4cCI6MTY4MjMxNTkwNX0.sdvEYIhhnv8VTMWeHqtTB9iBF20pBJO-D8HbnygOKmi2jy7QS9P5Y4NCEJhr2ojsdpJxlsSDDMNxaC8Qz2t4-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/beneficiario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficiario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os documentos de um beneficiário a partir de seu id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/beneficiario/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficiario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover um beneficiário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/beneficiario/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficiario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar os dados cadastrais de um beneficiário;",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bGFuam9zIiwiaXNzIjoiQmVuZWZpY2lhcmlvIiwiaWQiOjMsImV4cCI6MTY4MjMwMDQxOH0.OLyXI5SC6pVSnz9iRWl6OXzz5X3ABQ55oN0x27zlw3yspv-tzEykba6yz-tew9gHdcztaplMjDEkn0IRoUCDHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nome\": \"TOM\",\r\n    \"telefone\": 1198\r\n \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/beneficiario/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beneficiario",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um usuario para fazer login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"wlanjos\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login na API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"wlanjos\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
